@@ -144,10 +144,10 @@ fastify.get('/', async (request, reply) => {
         if (checkurl.status === 200) {
             url = 'http://192.168.31.210:' + port
         } else {
-            url = 'https://' + request.headers.host
+            url = 'http://lottsanook-cfworker.boy1556.workers.dev'
         }
     } catch (error) {
-        url = 'https://' + request.headers.host
+        url = 'http://lottsanook-cfworker.boy1556.workers.dev'
     }
 
     let test = ['test']
