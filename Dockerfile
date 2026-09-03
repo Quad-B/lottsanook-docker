@@ -7,13 +7,13 @@ WORKDIR '/app'
 #RUN npm install
 #COPY . .
 
-RUN npm install -g pnpm
+RUN npm install -g pnpm@9
 COPY package*.json ./
 COPY pnpm-*.yaml ./
 # RUN pnpm fetch --prod
 ADD . ./
 # RUN pnpm install -r --offline --prod
-RUN pnpm clean --lockfile
+#RUN pnpm clean --lockfile
 RUN pnpm install --no-frozen-lockfile
 
 RUN pnpm dlx puppeteer browsers install
