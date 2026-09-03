@@ -13,6 +13,7 @@ COPY pnpm-*.yaml ./
 # RUN pnpm fetch --prod
 ADD . ./
 # RUN pnpm install -r --offline --prod
+RUN pnpm clean --lockfile
 RUN pnpm install --no-frozen-lockfile
 
 RUN pnpm dlx puppeteer browsers install
